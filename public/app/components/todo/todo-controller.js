@@ -8,29 +8,46 @@ function TodoController() {
 	// **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
 	var todoService = new TodoService()
 
-	// Use this getTodos function as your callback for all other edits
-	function getTodos(){
-		//FYI DONT EDIT ME :)
-		todoService.getTodos(draw)
-	}
 
-	function draw(todos) {
+// Use this getTodos function as your callback for all other edits
+	
+	
+	function getTodos (){
+    todoService.getTodos(draw)
+  }
+	
+  
+	function draw(todosArr) {
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
-		var template = ''
-		//DONT FORGET TO LOOP
-	}
+	 
+	  var todoElem = document.getElementById("todo-list");
+	  var template = '<ul>'
+      for (var i = 0; i < todosArr.length; i++) {
+      var todo = todosArr[i];
+      template += `
+	  
+	  <li>${todo.description}<button type="button" onclick="app.controllers.todoController.removeTodo(${todo.id})">DELETE</button><input type="checkbox"></li>
+	  
+	  `
+    }
+	
+	template +='<ul>'
+	todoElem.innerHTML = template;
+  }
 
 	this.addTodoFromForm = function (e) {
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
-		var form = e.target
+		var newTodo = e.target.description.value
+	
 		var todo = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
+		description: newTodo
 		}
-
 		//PASSES THE NEW TODO TO YOUR SERVICE
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
+		
 		//YOU SHOULDN'T NEED TO CHANGE THIS
 		todoService.addTodo(todo, getTodos)
 		                         //^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
@@ -44,10 +61,13 @@ function TodoController() {
 
 	this.removeTodo = function (todoId) {
 		// ask the service to run the remove todo with this id
-
+         todoService.removeTodo(todoId, getTodos)
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
 
-	// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
 
+	// IF YOU WANT YOUR TODO LIST TO DRAW WHEN THE PAGE FIRST LOADS WHAT SHOULD YOU CALL HERE???
+    getTodos();
 }
+
+

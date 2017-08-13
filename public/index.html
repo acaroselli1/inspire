@@ -1,30 +1,52 @@
-<html>
+<html id="html">
 
 <head>
 	<meta charset="UTF-8">
 	<title>Inspire</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body id="body">
-	<div id="weather">
-		Your Weather Template
+<body>
+	<div class="container-fluid">
+		<div class="row one">
+			<div class="col-xs-10">
+			</div>
+			<div class="col-xs-2">
+				<div id="weather">
+				</div>
+			</div>
+		</div>
+		<div class="row two">
+			<div class="col-xs-4">
+			</div>
+			<div class="col-xs-4">
+				<div id="time">
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+					<input type="text" name="description" placeholder="Todo Description">
+					<button type="submit">Add Todo</button>
+				</form>
+				<div id="todo-list">
+				</div>
+			</div>
+		</div>
+		<div class="row three">
+			<div class="col-xs-3">
+			</div>
+			<div class="col-xs-6">
+				<div id="quote">
+				</div>
+			</div>
+			<div class="col-xs-3">
+			</div>
+		</div>
+
 	</div>
-
-	<div id="quote">
-		The Quote
-	</div>
-
-	<div id="todo">
-		<form onsubmit=""></form>
-		A Todo List
-	</div>
-
-
-
-
 	<!--JS Libraries-->
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 	<!--Services-->
 	<script src="app/components/weather/weather-service.js"></script>
 	<script src="app/components/image/image-service.js"></script>
