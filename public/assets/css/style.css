@@ -36,7 +36,7 @@ body{
     font-family:Kaushan Script, cursive;
 }
 
-.quote-text{
+.quote-text, .author-text{
     background-color:rgba(0,0,0,.75);
     color:white;
 }
@@ -63,3 +63,20 @@ span{
     background-color:rgba(0,0,0,.75); 
     color:white;
 }
+.author-text{
+    text-align:center;
+}
+.author{
+    display:none;
+}
+
+.quote:hover .author{
+    display:block;
+}
+
+#clock{ text-align:center;
+		color:white;
+        font-size:8rem;
+        margin-top:23vh;
+        background-color:rgba(0,0,0,.75);
+	 }
