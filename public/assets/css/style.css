@@ -21,7 +21,8 @@
 }
 .weather{
    color:white;
-   background-color:rgba(0,0,0,.75)
+   background-color:rgba(0,0,0,.75);
+   text-align:center;
 }
 
 .todo{
@@ -56,4 +57,9 @@ button{
     color:white;
     background-color:navy;
     border-radius:15px;
+}
+
+span{
+    background-color:rgba(0,0,0,.75); 
+    color:white;
 }

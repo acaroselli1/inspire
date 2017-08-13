@@ -20,8 +20,10 @@ function TodoController() {
 	function draw(todosArr) {
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
-	 
+	  
 	  var todoElem = document.getElementById("todo-list");
+	  var todoCount = document.getElementById("todo-count");
+      todoCount.innerHTML = todosArr.length; 
 	  var template = '<ul>'
       for (var i = 0; i < todosArr.length; i++) {
       var todo = todosArr[i];
