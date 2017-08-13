@@ -4,9 +4,9 @@
     top:90vh;
     justify-content:center;
     color:white;
-    width:100vw;
+    width:100vw;*/
     display:flex;
-    flex-wrap:flex;*/
+    flex-wrap:flex;
 }
 .one{
     height:20vh;
@@ -42,10 +42,16 @@ body{
 #todo-list{
     height:40vh;
 }
-
+li{
+   background-color:rgba(0,0,0,.75);  
+}
 ul {
     height:30vh;
-    color:black;
+    color:white;
+    list-style-type: none;
 }
 
-
+button{
+    color:white;
+    background-color:navy;
+}

@@ -27,7 +27,7 @@ function TodoController() {
       var todo = todosArr[i];
       template += `
 	  
-	  <li>${todo.description}<button type="button" onclick="app.controllers.todoController.removeTodo(${todo.id})">DELETE</button><input type="checkbox"></li>
+	  <li><button type="button" onclick="app.controllers.todoController.removeTodo(${todo._id})">Delete</button><input type="checkbox">${todo.description}</li>
 	  
 	  `
     }

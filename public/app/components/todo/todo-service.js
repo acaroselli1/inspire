@@ -31,7 +31,7 @@ function TodoService() {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		var todo = {}
 		//STEP 1: Find the todo by its id **HINT** todoList
-	     var todo = myBooks.find(todo => todo.id == todoId)
+	     var todo = mytodoList.find(todo => todo.id == todoId)
          if(todo.completed){
          todo.completed = false
          }else if(!todo.completed){
@@ -56,7 +56,7 @@ function TodoService() {
 
 	this.removeTodo = function (todoId, getTodos) {
 		// Umm this one is on you.... It's also a unique snowflake the method is a DELETE
-    $.ajax({
+	 $.ajax({
       contentType: 'application/json',
       method: 'DELETE',
       url: '/api/todos/' + todoId
@@ -65,8 +65,6 @@ function TodoService() {
       .fail(logError)
   }	
 	
-
-
 // I KNOW LOTS OF CODE RIGHT
 
 }
