@@ -29,9 +29,10 @@
 }
 
 body{
-    font-size:1.5rem;
+    font-size:2rem;
     background-repeat:no-repeat;
     background-size:cover;
+    font-family:Kaushan Script, cursive;
 }
 
 .quote-text{
@@ -54,4 +55,5 @@ ul {
 button{
     color:white;
     background-color:navy;
+    border-radius:15px;
 }

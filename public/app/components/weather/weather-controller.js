@@ -16,7 +16,7 @@ function drawWeather(obj) {
     var weatherElem = document.getElementById('weather')
 	template = `
     <div class="weather">
-	  <p>${obj.main.temp} degrees</p>
+	  <p>${Math.floor(((9/5) * (obj.main.temp-273) + 32))} &deg F</p>
 	  <p>Boise</p>
     </div> 
       `
