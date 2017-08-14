@@ -29,15 +29,17 @@ function TodoService() {
 
 	this.toggleTodoStatus = function (todoId, getTodos) {
 		// MAKE SURE WE THINK THIS ONE THROUGH
-		var todo = {}
+		console.log(todoId)
 		//STEP 1: Find the todo by its id **HINT** todoList
-	     var todo = mytodoList.find(todo => todo.id == todoId)
-         if(todo.completed){
-         todo.completed = false
-         }else if(!todo.completed){
-         todo.completed= true
-         }
-		
+		 
+		var todo = todoList.find(todo => todo._id == todoId)
+		console.log(todo)
+		if (!todo.completed){
+           todo.completed = true;
+		} else{
+		   todo.completed = false;
+		}
+ 	
 		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
 
 		//STEP 3: Here is that weird Ajax request because $.put doesn't exist
@@ -45,7 +47,7 @@ function TodoService() {
 			method: 'PUT',
 			contentType: 'application/json',
 			url: '/api/todos/' + todoId,
-			data: todo
+			data: JSON.stringify(todo)
 		})
 			.then((message) => {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
