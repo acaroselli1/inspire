@@ -1,53 +1,102 @@
 // HEY WHERE ARE ALL OF YOUR CONTROLLERS??
 var app = {
-  controllers:{
-    weatherController: new WeatherController(),
-    imageController: new ImageController(),
-    quoteController: new QuoteController(),
-    todoController: new TodoController()
-  }
+	controllers: {
+		weatherController: new WeatherController(),
+		imageController: new ImageController(),
+		quoteController: new QuoteController(),
+		todoController: new TodoController()
+	}
 }
 
 
-$(document).ready(function(){
-			function displayTime(){
-				var currentTime = new Date();
-				var hours= currentTime.getHours();
-				var minutes=currentTime.getMinutes();
-				var seconds=currentTime.getSeconds();
-				var milliseconds=currentTime.getMilliseconds();
 
-				var meridiem="AM";
+function displayTimeStandard() {
+	  
+	    var currentTime = new Date();
+		var hours = currentTime.getHours();
+		var minutes = currentTime.getMinutes();
+		var meridiem = "AM";
+ 
+		if (hours > 12) {
+			hours = hours - 12;
+			meridiem = "PM";
+		}
+		if (hours === 0) {
+			hours = 12;
+		}
 
-				if(hours>12){
-					hours = hours - 12;
-					meridiem ="PM";
-				}
-				if(hours===0){
-					hours = 12;
-				}
+		if (minutes < 10) {
+			minutes = "0" + minutes;
+		}
+		if (hours < 10) {
+			hours = " " + hours;
+		}
 
+		var clockDiv = document.getElementById('clock');
+		clockDiv.innerText = hours + ":" + minutes + " " + meridiem;
+	
+		if ((hours < 12) && (meridiem == "AM")){ 
+			var greeting = document.getElementById("greeting");
+			greeting.innerText = "Good Morning!"
+	     } else if ((hours >=5) && (meridiem =="PM")){
+			var greeting = document.getElementById("greeting");
+			greeting.innerText ="Good Evening!"
 
-				if(seconds<10){
-					seconds="0" + seconds;
-				}
+		 } else {var greeting = document.getElementById("greeting");
+			 greeting.innerText = "Good Afternoon!";
+		 }
+/*function displayTimeMilitary(){
+	 clearInterval(displayTimeStandard)
+	 var currentTime = new Date();
+	 var hours = currentTime.getHours();
+	 var minutes = currentTime.getMinutes();
+	 var meridiem = "AM";
+ 
 
-				if(minutes<10){
-					minutes="0" + minutes;
-				}
-				if(hours<10){
-					hours="0" + hours;
-				}
+	if (minutes < 10) {
+		minutes = "0" + minutes;
+	}
+	if (hours < 10) {
+		hours = "0" + hours;
+	}
 
+	var clockDiv = document.getElementById('clock');
+	clockDiv.innerText = hours + ":" + minutes
+	
+	}
+  
+   var clicks = 1
 
-
-
-				var clockDiv= document.getElementById('clock');
-				clockDiv.innerText= hours+ ":" + minutes + " " + meridiem;			
-							
-			}
-
-			setInterval(displayTime,100);	
+ function initiator (){
+	 click++;
+	if (click)
+ }*/
+}
+ setInterval(displayTimeStandard,1000)
+	
 		
+			
+	     
 
-		});	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

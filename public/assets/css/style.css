@@ -1,4 +1,4 @@
-*{outline:1px solid red}
+/**{outline:1px solid red}*/
 .quote{
    /* position:absolute;
     top:90vh;
@@ -9,11 +9,11 @@
     flex-wrap:flex;
 }
 .one{
-    height:20vh;
+    height:30vh;
 }
 
 .two{
-    height:60vh;
+    height:50vh;
 }
 
 .three{
@@ -45,7 +45,9 @@ body{
     height:40vh;
 }
 li{
-   background-color:rgba(0,0,0,.75);  
+   background-color:rgba(0,0,0,.75); 
+   display:flex;
+   flex-wrap: wrap; 
 }
 ul {
     height:30vh;
@@ -77,6 +79,13 @@ span{
 #clock{ text-align:center;
 		color:white;
         font-size:8rem;
-        margin-top:23vh;
+        margin-top:12vh;
+        background-color:rgba(0,0,0,.75);
+	 }
+
+#greeting{ text-align:center;
+		color:white;
+        font-size:6rem;
+        margin-top:5vh;
         background-color:rgba(0,0,0,.75);
 	 }

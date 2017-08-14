@@ -29,7 +29,7 @@ function TodoController() {
       var todo = todosArr[i];
       template += `
 	  
-	  <li><button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Delete</button>   ${todo.description}</li>
+	  <li><button type="button" onclick="app.controllers.todoController.removeTodo('${todo._id}')">Delete</button>${todo.description}</li>
 	  
 	  `
     }
