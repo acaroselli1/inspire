@@ -1,7 +1,7 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var dbConnect = require('./config/db/mlab-config')
-var port = 3000
+var port = process.env.PORT || 3000
 
 var server = express()
 server.listen(port,()=>{
