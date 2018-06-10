@@ -29,8 +29,8 @@
 			</div>
 			<div class="col-xs-4">
 				<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-					<input type="text" name="description" placeholder="Todo Description">
-					<button type="submit">Add Todo</button><span>  Todos Count: </span><span id="todo-count"></span>
+					<input id="todoInput" type="text" name="description" placeholder="Todo Description">
+					<button type="submit">Add Todo</button><span><button onclick="document.getElementById('todoInput').value=''">Clear</button><span></span>  Todos Count: </span><span id="todo-count"></span>
 				</form>
 				<div id="todo-list">
 				</div>

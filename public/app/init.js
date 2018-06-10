@@ -35,7 +35,7 @@ function displayTimeStandard() {
 		var clockDiv = document.getElementById('clock');
 		clockDiv.innerText = hours + ":" + minutes + " " + meridiem;
 	
-		if ((hours < 12) && (meridiem == "AM")){ 
+		if ((hours <= 12) && (meridiem == "AM")){ 
 			var greeting = document.getElementById("greeting");
 			greeting.innerText = "Good Morning!"
 	     } else if ((hours >=5) && (meridiem =="PM")){
